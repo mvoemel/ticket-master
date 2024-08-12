@@ -1,4 +1,4 @@
-name: tests
+name: auth-tests
 
 on:
   pull_request
@@ -10,7 +10,3 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: cd auth && npm install && npm run test:ci
-
-      - run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
