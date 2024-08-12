@@ -1,6 +1,6 @@
 name: manifest-deploy
 
-# You need to have the following secrets defined in this github repo: 
+# You need to have the following secrets defined in this github repo:
 # DOCKER_USERNAME, DOCKER_PASSWORD, DIGITAL_OCEAN_ACCESS_TOKEN
 
 on:
@@ -20,4 +20,4 @@ jobs:
       #    token: ${{ secrets.DIGITAL_OCEAN_ACCESS_TOKEN }}
       - run: echo "Applying kubernetes manifest"
       #- run: doctl kubernetes cluster kubeconfig save YOUR_CLUSTER_NAME
-      #- run: kubectl apply -f infrastructure/k8s
+      #- run: kubectl apply -f infrastructure/k8s && kubectl apply -f infrastructure/k8s-prod
