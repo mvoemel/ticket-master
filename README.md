@@ -1,6 +1,6 @@
 # Ticket Master
 
-This application allows you to buy and sell tickets online. It was developed using an event-based microservices approach.
+This application allows you to buy and sell tickets online. It was developed using an asynchronous event-based microservices approach.
 
 ## Development
 
