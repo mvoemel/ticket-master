@@ -18,7 +18,7 @@ app.set("trust proxy", true); // Enable X-Forwarded-* headers
 app.use(json());
 app.use(
   cookieSession({
-    signed: false, // not encrypted
+    signed: false, // Not encrypted
     secure: process.env.NODE_ENV !== "test", // HTTPS only except in test environment
   })
 );
