@@ -1,0 +1,23 @@
+name: auth-deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - auth/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Pushing to docker hub"
+      - run: cd auth && docker build -t YOUR_DOCKER_USERNAME/auth .
+      # You need to have the following secrets defined in this github repo
+      #- run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      #  env:
+      #    DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      #    DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      #- run: docker push YOUR_DOCKER_USERNAME/auth
+      
