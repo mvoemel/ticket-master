@@ -2,6 +2,10 @@
 
 This application allows you to buy and sell tickets online. It was developed using an asynchronous event-based microservices approach.
 
+## Deployment
+
+TBA
+
 ## Development
 
 _Prerequisits: You need to have **docker**, **kubernetes** and **skaffold** installed. Also you may need to install **ingress-nginx**._
@@ -43,7 +47,7 @@ kubectl create secret generic stripe-secret --from-literal STRIPE_KEY=your-strip
 
 ## Test
 
-Run `npm run test` to test a microservice.
+Run `npm run test` to run a test suit in a microservice. Run `npm run test:ci` to run tests only once without the `--watchAll` flag.
 
 ## Publish new npm Version of Common Package
 
