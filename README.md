@@ -4,7 +4,7 @@ This application allows you to buy and sell tickets online. It was developed usi
 
 ## Deployment
 
-TBA
+If you deploy on DigitalOcean you first need to purchase a k8s cluster with at least three nodes. Than you need to create an access token and paste it in the GitHub secrets with a specific name, which is defined in the `.github/workflows` files. Moreover you need to add your Docker username and password as a secret. After that you need to install `ingress-nginx` on the DigitalOcean k8s cluster and also set the jwt and the stripe secret. Then you need to uncomment all the stuff inside the `.github/workflows` files.
 
 ## Development
 
@@ -36,13 +36,13 @@ If you get the `Your connection is not private` error click anywhere in the wind
 - JWT Secret:
 
 ```bash
-kubectl create secret generic jwt-secret --from-literal JWT_KEY=your-jwt-secret
+kubectl create secret generic jwt-secret --from-literal=JWT_KEY=your-jwt-secret
 ```
 
 - Stripe Secret:
 
 ```bash
-kubectl create secret generic stripe-secret --from-literal STRIPE_KEY=your-stripe-secret-key
+kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=your-stripe-secret-key
 ```
 
 ## Test

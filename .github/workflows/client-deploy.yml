@@ -1,0 +1,31 @@
+name: client-deploy
+
+# You need to have the following secrets defined in this github repo:
+# DOCKER_USERNAME, DOCKER_PASSWORD, DIGITAL_OCEAN_ACCESS_TOKEN
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - client/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Pushing to docker hub"
+      #- run: cd client && docker build -t YOUR_DOCKER_USERNAME/client .
+      #- run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      #  env:
+      #    DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      #    DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      #- run: docker push YOUR_DOCKER_USERNAME/client
+      #- uses: digitalocean/action-doctl@v2
+      #  with:
+      #    token: ${{ secrets.DIGITAL_OCEAN_ACCESS_TOKEN }}
+      - run: echo "Deploy to kubernetes cluster"
+      #- run: doctl kubernetes cluster kubeconfig save YOUR_CLUSTER_NAME
+      - run: echo "Restart deployment cluster"
+      #- run: kubectl rollout restart deployment client-depl
