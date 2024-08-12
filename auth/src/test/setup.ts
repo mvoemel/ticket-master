@@ -36,7 +36,7 @@ afterAll(async () => {
 
 global.getAuthCookie = async () => {
   const email = "test@example.com";
-  const password = "password123";
+  const password = "password1234";
 
   const response = await request(app)
     .post("/api/users/signup")
