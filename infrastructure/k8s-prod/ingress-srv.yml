@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: todo.com
+    - host: YOUR_PURCHASED_DOMAIN_NAME.com
       http:
         paths:
           - path: /api/users/?(.*)

@@ -4,7 +4,7 @@ This application allows you to buy and sell tickets online. It was developed usi
 
 ## Deployment
 
-If you deploy on DigitalOcean you first need to purchase a k8s cluster with at least three nodes. Than you need to create an access token and paste it in the GitHub secrets with a specific name, which is defined in the `.github/workflows` files. Moreover you need to add your Docker username and password as a secret. After that you need to install `ingress-nginx` on the DigitalOcean k8s cluster and also set the jwt and the stripe secret. Then you need to uncomment all the stuff inside the `.github/workflows` files.
+If you deploy on DigitalOcean you first need to purchase a k8s cluster with at least three nodes. Than you need to create an access token and paste it in the GitHub secrets with a specific name, which is defined in the `.github/workflows` files. Moreover you need to add your Docker username and password as a secret. After that you need to install `ingress-nginx` on the DigitalOcean k8s cluster and also set the jwt and the stripe secret. Then you need to uncomment all the stuff inside the `.github/workflows` files. You also need a load balancer on DigitalOcean. Furthermore you need to own a domain name, which you need to specify in the `infrastructure/k8s-prod/ingress-srv.yml` file. Also you need to change the `client/api/build-client.js` file.
 
 ## Development
 
